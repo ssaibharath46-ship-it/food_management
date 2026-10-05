@@ -35,3 +35,10 @@ HTML5 + CSS3 + JavaScript + Local Storage
 
 ## Important
 The 24-hour rule is a maximum listing period, not a food-safety guarantee. A donor's earlier expiry time takes priority.
+
+### Fixed in latest version
+- Admin account is automatically seeded; no manual signup is required.
+- Admin route now enforces role correctly.
+- Find Food handles expiry, sorting, filtering and claim permissions correctly.
+- Donors/admins can browse but only Recipient/NGO/Volunteer users can claim.
+- Login page includes Reset Demo Data for testing.
