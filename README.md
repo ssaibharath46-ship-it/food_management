@@ -1,4 +1,4 @@
-# FoodRescue — Food Waste Management System
+# Second Serving — Food Waste Management System
 
 ## Tech
 HTML5 + CSS3 + JavaScript + Local Storage
@@ -30,7 +30,7 @@ HTML5 + CSS3 + JavaScript + Local Storage
 2. Create a donor account.
 3. Post food.
 4. Open Find Food and claim it using another recipient account.
-5. For Admin, use `admin@foodrescue.com` / `admin123`.
+5. For Admin, use `admin@secondserving.com` / `admin123`.
 6. Admin can use **Add Demo Data** to populate a sample donation.
 
 ## Important

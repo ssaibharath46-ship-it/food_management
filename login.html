@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Login | FoodRescue</title>
+    <title>Login | Second Serving</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="auth-page">
     <div class="auth-card">
-      <a class="brand" href="index.html">🍱 Food<span>Rescue</span></a>
+      <a class="brand" href="index.html">🍱 Second <span>Serving</span></a>
       <h1>Welcome back 👋</h1>
       <p>Login to continue rescuing food.</p>
       <form id="loginForm">
@@ -31,7 +31,7 @@
         New here? <a href="signup.html">Create an account</a>
       </p>
       <div class="demo-box">
-        Admin login: <b>admin@foodrescue.com</b> / <b>admin123</b><br /><small
+        Admin login: <b>admin@secondserving.com</b> / <b>admin123</b><br /><small
           >The admin account is created automatically in Local Storage.</small
         >
       </div>
@@ -49,7 +49,7 @@
     <script>
       document.getElementById("resetDemo").onclick = () => {
         if (
-          confirm("Clear FoodRescue demo data and recreate the admin account?")
+          confirm("Clear Second Serving demo data and recreate the admin account?")
         ) {
           localStorage.clear();
           ensureAdmin();

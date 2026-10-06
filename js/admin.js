@@ -43,11 +43,11 @@ function adminExpire(id) {
 function seedDemo() {
   ensureAdmin();
   let users = getUsers();
-  if (!users.some((x) => x.email === "demo@foodrescue.com"))
+  if (!users.some((x) => x.email === "demo@secondserving.com"))
     users.push({
       id: "UDEMO",
       name: "Demo Donor",
-      email: "demo@foodrescue.com",
+      email: "demo@secondserving.com",
       password: "demo123",
       role: "donor",
       area: "Vijayawada",

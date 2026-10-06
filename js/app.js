@@ -6,11 +6,11 @@ const DB = {
 };
 function ensureAdmin() {
   const users = getUsers();
-  if (!users.some((u) => u.email === "admin@foodrescue.com")) {
+  if (!users.some((u) => u.email === "admin@secondserving.com")) {
     users.push({
       id: "ADMIN001",
       name: "System Administrator",
-      email: "admin@foodrescue.com",
+      email: "admin@secondserving.com",
       password: "admin123",
       role: "admin",
       area: "All Areas",
