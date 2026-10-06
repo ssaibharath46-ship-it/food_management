@@ -1,1 +1,59 @@
-let type="all";function renderHistory(){let u=requireLogin();if(!u)return;let d=getDonations(),c=getClaims(),items=[];if(type!=="claims")items.push(...d.filter(x=>x.donorId===u.id).map(x=>({kind:"Donation",name:x.foodName,qty:x.quantity+" kg / "+x.servings+" meals",status:x.status,date:x.postedAt})));if(type!=="donations")items.push(...c.filter(x=>x.recipientId===u.id).map(x=>{let x2=d.find(a=>a.id===x.donationId);return {kind:"Claim",name:x2?.foodName||"Food",qty:x2?x2.quantity+" kg / "+x2.servings+" meals":"-",status:x.status,date:x.createdAt}}));items.sort((a,b)=>new Date(b.date)-new Date(a.date));historyList.innerHTML=items.length?items.map(x=>`<div class="history-item"><div><b>${x.kind}: ${esc(x.name)}</b><div class="muted">${x.qty} • ${new Date(x.date).toLocaleString()}</div></div><span class="badge ${x.status}">${x.status}</span></div>`).join(""):`<div class="empty">No history found.</div>`}document.addEventListener("DOMContentLoaded",()=>{if(!requireLogin())return;document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");type=b.dataset.type;renderHistory()});renderHistory()});
+let type = "all";
+function renderHistory() {
+  let u = requireLogin();
+  if (!u) return;
+  let d = getDonations(),
+    c = getClaims(),
+    items = [];
+  if (type !== "claims")
+    items.push(
+      ...d
+        .filter((x) => x.donorId === u.id)
+        .map((x) => ({
+          kind: "Donation",
+          name: x.foodName,
+          qty: x.quantity + " kg / " + x.servings + " meals",
+          status: x.status,
+          date: x.postedAt,
+        })),
+    );
+  if (type !== "donations")
+    items.push(
+      ...c
+        .filter((x) => x.recipientId === u.id)
+        .map((x) => {
+          let x2 = d.find((a) => a.id === x.donationId);
+          return {
+            kind: "Claim",
+            name: x2?.foodName || "Food",
+            qty: x2 ? x2.quantity + " kg / " + x2.servings + " meals" : "-",
+            status: x.status,
+            date: x.createdAt,
+          };
+        }),
+    );
+  items.sort((a, b) => new Date(b.date) - new Date(a.date));
+  historyList.innerHTML = items.length
+    ? items
+        .map(
+          (x) =>
+            `<div class="history-item"><div><b>${x.kind}: ${esc(x.name)}</b><div class="muted">${x.qty} • ${new Date(x.date).toLocaleString()}</div></div><span class="badge ${x.status}">${x.status}</span></div>`,
+        )
+        .join("")
+    : `<div class="empty">No history found.</div>`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  if (!requireLogin()) return;
+  document.querySelectorAll(".tab").forEach(
+    (b) =>
+      (b.onclick = () => {
+        document
+          .querySelectorAll(".tab")
+          .forEach((x) => x.classList.remove("active"));
+        b.classList.add("active");
+        type = b.dataset.type;
+        renderHistory();
+      }),
+  );
+  renderHistory();
+});

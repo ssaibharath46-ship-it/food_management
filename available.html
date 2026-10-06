@@ -1,3 +1,165 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Find Food | FoodRescue</title><link rel="stylesheet" href="css/style.css"></head>
-<body><div id="app"><aside class="sidebar"><a class="brand" href="dashboard.html">🍱 Food<span>Rescue</span></a><nav><a href="dashboard.html">🏠 Dashboard</a><a href="donate.html">🍱 Donate Food</a><a class="active" href="available.html">🔎 Find Food</a><a href="history.html">📜 My History</a></nav><button class="logout" onclick="logout()">↪ Logout</button></aside>
-<main class="main"><div class="topbar"><div><p class="muted">Rescue nearby food</p><h1>Available Donations</h1><p class="muted">Recipient/NGO accounts can claim food. Donor accounts can browse listings.</p></div></div><div class="filters"><input id="search" placeholder="🔎 Search food or area..."><select id="filterCategory"><option value="">All Categories</option><option>Cooked Meals</option><option>Rice / Biryani</option><option>Bakery</option><option>Fruits</option><option>Vegetables</option><option>Dairy</option><option>Packaged Food</option><option>Other</option></select><select id="sort"><option value="priority">Smart Priority</option><option value="expiry">Expiring Soon</option><option value="quantity">Largest Quantity</option></select></div><div id="foodList" class="food-grid"></div></main></div><script src="js/app.js"></script><script src="js/available.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Food | FoodRescue</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a class="brand" href="dashboard.html">
+                🍱 Food<span>Rescue</span>
+            </a>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+
+                <a href="donate.html">
+                    🍱 Donate Food
+                </a>
+
+                <a class="active" href="available.html">
+                    🔎 Find Food
+                </a>
+
+                <a href="history.html">
+                    📜 My History
+                </a>
+
+            </nav>
+
+            <button class="logout" onclick="logout()">
+                ↪ Logout
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <!-- HEADER -->
+            <div class="topbar">
+
+                <div>
+
+                    <p class="muted">
+                        Rescue nearby food
+                    </p>
+
+                    <h1>
+                        Available Donations
+                    </h1>
+
+                    <p class="muted">
+                        Recipient/NGO accounts can claim food.
+                        Donor accounts can browse listings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTERS -->
+            <div class="filters">
+
+                <input
+                    type="search"
+                    id="search"
+                    placeholder="🔎 Search food or area..."
+                    autocomplete="off"
+                >
+
+                <select id="filterCategory">
+
+                    <option value="">
+                        All Categories
+                    </option>
+
+                    <option value="Cooked Meals">
+                        Cooked Meals
+                    </option>
+
+                    <option value="Rice / Biryani">
+                        Rice / Biryani
+                    </option>
+
+                    <option value="Bakery">
+                        Bakery
+                    </option>
+
+                    <option value="Fruits">
+                        Fruits
+                    </option>
+
+                    <option value="Vegetables">
+                        Vegetables
+                    </option>
+
+                    <option value="Dairy">
+                        Dairy
+                    </option>
+
+                    <option value="Packaged Food">
+                        Packaged Food
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <select id="sort">
+
+                    <option value="priority">
+                        Smart Priority
+                    </option>
+
+                    <option value="expiry">
+                        Expiring Soon
+                    </option>
+
+                    <option value="quantity">
+                        Largest Quantity
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- FOOD CARDS -->
+            <div id="foodList" class="food-grid">
+
+                <!-- JavaScript will load food here -->
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/app.js"></script>
+    <script src="js/available.js"></script>
+
+</body>
+
+</html>
